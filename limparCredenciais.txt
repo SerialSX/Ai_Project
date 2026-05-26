@@ -1,0 +1,53 @@
+:: =======================================================
+:: 1. CONFIGURAR SUA IDENTIDADE (QUANDO CHEGAR NO PC)
+:: =======================================================
+
+:: Configuração LOCAL (Recomendado - afeta apenas a pasta do projeto atual)
+git config user.name "Arthur"
+git config user.email "seu.email@exemplo.com"
+
+:: Configuração GLOBAL (Opcional - afeta todas as pastas do seu usuário no Windows)
+git config --global user.name "Arthur"
+git config --global user.email "seu.email@exemplo.com"
+
+:: Verificar se a configuração foi gravada corretamente
+git config user.name
+git config user.email
+
+
+:: =======================================================
+:: 2. REMOVER SUA IDENTIDADE (ANTES DE IR EMBORA)
+:: =======================================================
+
+:: Remover a configuração LOCAL (Rode isso dentro da pasta do seu projeto)
+git config --unset user.name
+git config --unset user.email
+
+:: Remover a configuração GLOBAL (Caso tenha usado)
+git config --global --unset user.name
+git config --global --unset user.email
+
+
+:: =======================================================
+:: 3. LIMPAR CREDENCIAIS DO GITHUB NO COFRE DO WINDOWS
+:: =======================================================
+
+:: Listar apenas as credenciais que tenham "github" no nome
+cmdkey /list | findstr /i "github"
+
+:: Deletar a credencial (Copie o nome gerado pelo comando acima e substitua abaixo)
+:: Exemplo de uso: cmdkey /delete:LegacyGeneric:target=git:https://github.com
+cmdkey /delete:COLE_O_NOME_DO_DESTINO_AQUI
+
+
+:: =======================================================
+:: 4. LIMPAR CACHE DE SESSÃO DO GIT
+:: =======================================================
+
+:: Iniciar o processo de exclusão de cache do Git
+git credential-manager erase
+
+:: ATENÇÃO: Após rodar o comando acima, o terminal vai pausar. 
+:: Digite as duas linhas abaixo e aperte ENTER duas vezes:
+host=github.com
+protocol=https
