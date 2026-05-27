@@ -4,11 +4,11 @@
 
 :: Configuração LOCAL (Recomendado - afeta apenas a pasta do projeto atual)
 git config user.name "Arthur"
-git config user.email "seu.email@exemplo.com"
+git config user.email "joaoarthurce@gmail.com"
 
 :: Configuração GLOBAL (Opcional - afeta todas as pastas do seu usuário no Windows)
 git config --global user.name "Arthur"
-git config --global user.email "seu.email@exemplo.com"
+git config --global user.email "joaoarthurce@gmail.com"
 
 :: Verificar se a configuração foi gravada corretamente
 git config user.name

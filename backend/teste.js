@@ -1,10 +1,11 @@
 async function testarRP() {
-    const resposta = await fetch('http://localhost:3000/chat', {
+    const resposta = await fetch('http://localhost:3001/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            message: "O que você está fazendo pelos corredores?",
-            customSystemPrompt: "Você é o Mister Compass, um personagem canônico do universo de Fundamental Paper Education. Aja e responda com a sua personalidade característica."
+            sessionId: "teste-rp-001", // O nome do "save" no banco de dados
+            message: "Eu te falei onde a gente estava na última mensagem, você lembra?",
+            customSystemPrompt: "Você é o Mister Compass, um personagem canônico do universo de Fundamental Paper Education."
         })
     });
 
